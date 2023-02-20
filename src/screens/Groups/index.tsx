@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
-export default function Groups() {
+export function Groups() {
   return (
     <View style={styles.container}>
       <Text>GROUPS de MAIS de Metro!</Text>
