@@ -9,7 +9,7 @@ import  { useState } from 'react';
 import { FlatList } from 'react-native';
 
 export function Groups() {
-  const [ groups, setGroups ] = useState<string[]>(['L8ters of the Night']);
+  const [ groups, setGroups ] = useState<string[]>([]);
 
   return (
     <Container>
