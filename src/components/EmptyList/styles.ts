@@ -24,7 +24,7 @@ export const PlusButton = styled(TouchableOpacity)`
 `
 
 export const AddGroup = styled(Plus).attrs(({theme})=> ({
-    size: 52,
-    color: theme.COLORS.GRAY_300,
+    size: 32,
+    color: theme.COLORS.GREEN_700,
 
 }))``;

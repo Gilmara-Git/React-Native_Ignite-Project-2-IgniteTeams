@@ -9,7 +9,7 @@ import  { useState } from 'react';
 import { FlatList } from 'react-native';
 
 export function Groups() {
-  const [ groups, setGroups ] = useState<string[]>(['Galera do Ignite']);
+  const [ groups, setGroups ] = useState<string[]>([]);
 
   return (
     <Container>
@@ -22,6 +22,7 @@ export function Groups() {
         renderItem={({item})=> <GroupCard groupName={item}/>}
         ListEmptyComponent={()=> (
           <EmptyList 
+            onAdd={()=>{console.log("onAdd was clicked on the Groups component")}}
             description="Please register a group to get started."/>)}
             contentContainerStyle={groups.length === 0 && { flex: 1}}
       />
