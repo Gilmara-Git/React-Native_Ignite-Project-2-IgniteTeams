@@ -4,7 +4,7 @@ import { TouchableOpacityProps } from 'react-native';
 
 type ButtonProps = TouchableOpacityProps & {
     buttonText: string;
-    type: ButtonTypeStyleProps;
+    type?: ButtonTypeStyleProps;
 }
 
 export const Button = ({type = "PRIMARY", buttonText, ...rest}: ButtonProps)=>{
