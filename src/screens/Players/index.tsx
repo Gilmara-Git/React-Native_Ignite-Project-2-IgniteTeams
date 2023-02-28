@@ -31,9 +31,32 @@ export const Players = ({
   const { COLORS } = useTheme();
   const { group } = params;
 
-  const [team, setTeam] = useState("Team A");
+  const [team, setTeam] = useState("Time A");
   const [playerName, setPlayerName] = useState("");
-  const [players, setPlayers] = useState<PlayerStorageDTO[]>([]);
+  const [players, setPlayers] = useState<PlayerStorageDTO[] | undefined>([]);
+
+
+
+
+
+
+  
+  const fetchPlayersByTeam = async () => {
+    try{
+     
+      const playersByTeam = await playersGetByGroupAndTeam(group, team);     
+      setPlayers(playersByTeam)
+
+
+    }catch(error){
+      console.log(error)
+      Alert.alert('Players per Team', 'There was a problem loading the players')
+    }
+
+  };
+
+
+
 
   const handlePlayerRemove = () => {
     console.log("I was clicked");
@@ -50,6 +73,7 @@ export const Players = ({
 
     try {
       await playerAddByGroup(newPlayer, group);
+      fetchPlayersByTeam();
     } catch (error) {
       if (error instanceof AppError) {
         Alert.alert("Failed", error.message);
@@ -60,24 +84,11 @@ export const Players = ({
     }
   };
 
-  const fetchPlayersByTeam = async () => {
-    try{
-      console.log(team, 'team sendo passado no parametro')
-      const playerByTeam = await playersGetByGroupAndTeam(group, team);
-      setPlayers(playerByTeam);
-
-
-    }catch(error){
-      console.log(error)
-      Alert.alert('Players per Team', 'There was a problem loading the players')
-    }
-
-  };
 
 
   useEffect(()=>{
     fetchPlayersByTeam();
-  },[]);
+  },[team]);
 
 
   return (
@@ -109,14 +120,14 @@ export const Players = ({
           )}
         />
 
-        <NumberOfPlayersPerTeam>{players.length}</NumberOfPlayersPerTeam>
+        <NumberOfPlayersPerTeam>{players?.length}</NumberOfPlayersPerTeam>
       </HeaderList>
 
       <FlatList
         data={players}
-        keyExtractor={(item) => item}
+        keyExtractor={(item) => item.name}
         renderItem={({ item }) => (
-          <PlayerCard playerName={item} onRemove={handlePlayerRemove} />
+          <PlayerCard playerName={item.name} onRemove={handlePlayerRemove} />
         )}
         ListEmptyComponent={() => (
           <EmptyList
@@ -126,7 +137,7 @@ export const Players = ({
         )}
         contentContainerStyle={[
           { paddingBottom: 100 },
-          players.length === 0 && { flex: 1 },
+          players?.length === 0 && { flex: 1 },
         ]}
         showsVerticalScrollIndicator={false}
       />
