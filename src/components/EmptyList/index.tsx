@@ -3,14 +3,16 @@ import { TouchableOpacityProps } from 'react-native';
 
 interface IEmptyList extends TouchableOpacityProps { 
     description: string;
+    onAdd: ()=> void;
 }
 
-export const EmptyList =({description, ...rest} :IEmptyList)=>{
+export const EmptyList =({description, onAdd, ...rest} :IEmptyList)=>{
     return (
         <Container
         >
             <Message>{description}</Message>
             <PlusButton
+                onPress={onAdd}
                 {...rest}
             >
                 <AddGroup />       
