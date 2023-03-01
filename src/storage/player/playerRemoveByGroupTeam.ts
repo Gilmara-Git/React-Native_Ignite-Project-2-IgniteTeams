@@ -5,8 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const  playerRemoveByGroupTeam = async (group:string, playerName: string)=>{
     try {
-        const storage = await playerGetByGroup(group);
-        console.log(storage)
+        const storage = await playerGetByGroup(group);       
         const updatedPlayers = storage.filter(player => player.name !== playerName);
         const players = JSON.stringify(updatedPlayers);
         await AsyncStorage.setItem(`${PLAYER_COLLECTION}-${group}`, players )
