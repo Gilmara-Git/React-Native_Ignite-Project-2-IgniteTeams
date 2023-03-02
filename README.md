@@ -5,9 +5,9 @@
 Figma Layout:
 [Millena Kupsinskü Martins](https://www.linkedin.com/in/millenakmartins/)
 
-<img src="" alt="layout">
+<img src="https://ik.imagekit.io/cnbmdh4b9w/ignite_Teams_krDvINGes.png?ik-sdk-version=javascript-1.4.3&updatedAt=1677724716297" alt="layout">
 
-<img src="" alt="ignite-teams"/>
+<img src="https://ik.imagekit.io/cnbmdh4b9w/ezgif.com-video-to-gif__2__J4kd10rMGV.gif?ik-sdk-version=javascript-1.4.3&updatedAt=1677724701920" alt="ignite-teams"/>
 
 </div>
 
@@ -15,34 +15,32 @@ Figma Layout:
 
 **React Native** project developed during my **Ignite bootcamp** with [Rocketseat](https://www.rocketseat.com.br/).
 
-- This an an application to manage and organize games.
-- You can join a Group and from within the Group,  a Team
+- This an an application to manage and organize games with your friends.
+- All the components, screens and functionalities are well structures into proper folders separating functionalities and responsibilities.
+- It allows you to create a ***group***, then add ***players*** into its Teams.
+- It does not allow to register the same ***player*** in 2 different Teams.
+- There is a label indicating how many ***players*** contain in each Team.
+- There are validations to prevent entering duplicated or blank ***groups*** and ***Players***.
+- You are prompted to an alert message to confirm whenever you want to remove a ***group*** and a ***player***.
+  
+ # Motivation
 
-From here and on, continue editing ...... 
-- You can toggle a task as completed/uncompleted
-- There are 2 labels showing how many tasks are created and how many are completed
-- Whenever a task is completed, there will be a change on its text style.
-- There are validations to prevent entering duplicated or blank tasks.
-- You are prompted to an alert message to confirm whenever you want to remove a task.
-  ##Beyond:
-- Added a **congratulations** page whenever all tasks are marked as completed.
-- Changed the icon that indicates a task has been completed to a **heart** icon.
-- Disabled the **trash** button whenever a task is currently marked as completed.
-
-# Motivation
-
-- Learn how to style the interface/components using the **lib styled components** for react native.
+- Learn how to style the interfaces/components using the **lib styled components** for react native.
+- Learn how to work with ***AsyncStorage*** to persist data in the users's device.
+- Practice ***React Navigation v6***
 - Interact with the Dev Community, learn together and progress as a Developer.
 - Keep committed with my goals.</br>
 
 # Technologies
 
 - React Native
+- React Navigation
 - Expo
 - Expo google fonts
 - Typescript
 - Expo Vector icons
 - Styled Components
+- AsyncStorage
 
 # App creation
 Project was created using **expo init appName --npm*** 
