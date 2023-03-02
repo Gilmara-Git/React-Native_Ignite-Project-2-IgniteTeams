@@ -20,24 +20,25 @@ Figma Layout:
 - It allows you to create a ***group***, then add ***players*** into its Teams.
 - It does not allow to register the same ***player*** in 2 different Teams.
 - There is a label indicating how many ***players*** contain in each Team.
-- There are validations to prevent entering duplicated or blank ***groups*** and ***Players***.
-- You are prompted to an alert message to confirm whenever you want to remove a ***group*** and a ***player***.
+- There are validations to prevent entering duplicated or blank ***groups*** and/or a ***players***.
+- You are prompted to an alert message to confirm whenever you want to remove a ***group*** and/or a ***player***.
   
  # Motivation
 
 - Learn how to style the interfaces/components using the **lib styled components** for react native.
-- Learn how to work with ***AsyncStorage*** to persist data in the users's device.
-- Practice ***React Navigation v6***
+- Learn how to work with ***AsyncStorage*** to persist data in the users's device. ( ***AsyncStorage.setItem()*** , ***AsyncStorage.getItem()*** and ***AsyncStorage.removeItem()*** were used to manipulate data).
+
+- Practice ***React Navigation v6*** (***Stack Navigation** was used)
 - Interact with the Dev Community, learn together and progress as a Developer.
 - Keep committed with my goals.</br>
 
 # Technologies
 
 - React Native
+- Typescript
 - React Navigation
 - Expo
 - Expo google fonts
-- Typescript
 - Expo Vector icons
 - Styled Components
 - AsyncStorage
