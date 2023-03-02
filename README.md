@@ -16,7 +16,7 @@ Figma Layout:
 **React Native** project developed during my **Ignite bootcamp** with [Rocketseat](https://www.rocketseat.com.br/).
 
 - This an an application to manage and organize games with your friends.
-- All the components, screens and functionalities are well structures into proper folders separating functionalities and responsibilities.
+- All the components, screens and functionalities are well structured into proper folders separating functionalities and responsibilities.
 - It allows you to create a ***group***, then add ***players*** into its Teams.
 - It does not allow to register the same ***player*** in 2 different Teams.
 - There is a label indicating how many ***players*** contain in each Team.
@@ -27,8 +27,7 @@ Figma Layout:
 
 - Learn how to style the interfaces/components using the **lib styled components** for react native.
 - Learn how to work with ***AsyncStorage*** to persist data in the users's device. ( ***AsyncStorage.setItem()*** , ***AsyncStorage.getItem()*** and ***AsyncStorage.removeItem()*** were used to manipulate data).
-
-- Practice ***React Navigation v6*** (***Stack Navigation** was used)
+- Practice ***React Navigation v6*** (***Stack Navigation*** was used)
 - Interact with the Dev Community, learn together and progress as a Developer.
 - Keep committed with my goals.</br>
 
