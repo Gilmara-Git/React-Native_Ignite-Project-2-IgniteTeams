@@ -15,7 +15,7 @@ Figma Layout:
 
 **React Native** project developed during my **Ignite bootcamp** with [Rocketseat](https://www.rocketseat.com.br/).
 
-- This an an application to manage and organize games with your friends.
+- This an an application to schedule games with your friends.
 - All the components, screens and functionalities are well structured into proper folders separating functionalities and responsibilities.
 - It allows you to create a ***group***, then add ***players*** into its Teams.
 - It does not allow to register the same ***player*** in 2 different Teams.
