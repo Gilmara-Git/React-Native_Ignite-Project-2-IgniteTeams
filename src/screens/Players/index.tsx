@@ -152,6 +152,7 @@ const playerRemove = async(playerName: string)=>{
         <ButtonIcon icon="add" onPress={handlePlayerAdd} />
       </Form>
 
+    
       <HeaderList>
         <FlatList
           horizontal
