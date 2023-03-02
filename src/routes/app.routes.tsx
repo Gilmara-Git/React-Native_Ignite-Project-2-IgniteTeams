@@ -5,13 +5,6 @@ import { Players } from '@screens/Players';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
-export type AppRoutes = {
-   Groups: undefined;
-   NewGroup: undefined;
-   Players: undefined;
-}
-
-
 export const AppRoutes =()=>{    
       return ( 
       <Navigator screenOptions={ {
