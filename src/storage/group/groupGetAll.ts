@@ -5,8 +5,8 @@ export const groupGetAll = async ()=>{
     try{
         const storage =  await AsyncStorage.getItem(GROUP_COLLECTION);
      
-        const groupCollection: string[] = storage ? JSON.parse(storage) : []; 
-
+        let groupCollection: string[] = storage ? JSON.parse(storage) : []; 
+            
         return groupCollection;
     }catch(error){
         throw error;
