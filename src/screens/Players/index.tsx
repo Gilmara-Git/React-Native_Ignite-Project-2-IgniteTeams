@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import { FlatList, Alert, TextInput } from "react-native";
 import { Container, Form, HeaderList, NumberOfPlayersPerTeam } from "./styles";
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootParamList } from '@screens/Groups';
+import { useRoute } from '@react-navigation/native';
 
 import { playerAddByGroup } from "@storage/player/playerAddByGroup";
 import { playersGetByGroupAndTeam } from "@storage/player/playersGetByGroupAndTeam";
@@ -14,36 +16,30 @@ import { Input } from "@components/Input";
 import { Filter } from "@components/Filter";
 import { Header } from "@components/Header";
 import { Button } from "@components/Button";
-import { RootParamList } from '@screens/Groups';
+import { Loading } from '@components/Loading';
 import { Highlight } from "@components/Highlight";
 import { EmptyList } from "@components/EmptyList";
 import { ButtonIcon } from "@components/ButtonIcon";
 import { PlayerCard } from "@components/PlayerCard";
-import { Loading } from '@components/Loading';
 
 type PlayersRootParams = {
-  route: {
-    params: {
-      group: string;
-    };
-  },
-  
+     group: string;
+ 
 };
 
-type PlayersProps  =  PlayersRootParams & {
+type PlayersProps  =  {
   navigation: NativeStackNavigationProp<RootParamList, 'players'>
 }
 
-export const Players = ({
-  route: { params }, navigation
-}: PlayersProps): JSX.Element => {
-
-  const { group } = params;
+export const Players = ({ navigation }: PlayersProps) => {
+  
+  const  { params }  = useRoute();
+  const { group } = params as PlayersRootParams;
 
   const [isLoading, setIsLoading ] = useState(true);
   const [team, setTeam] = useState("Time A");
   const [playerName, setPlayerName] = useState("");
-  const [players, setPlayers] = useState<PlayerStorageDTO[] | undefined>([]);
+  const [players, setPlayers] = useState<PlayerStorageDTO[]>([]);
 
   const newPlayerNameInputRef = useRef<TextInput>(null);
 
@@ -75,7 +71,7 @@ const playerRemove = async(playerName: string)=>{
 
   } catch (error) {
     console.log(error);
-    Alert.alert(`It was not possible to remove ${playerName}`);
+    Alert.alert(`It was not possible to remove ${playerName.toUpperCase()}`);
   }
 }
 
@@ -156,6 +152,7 @@ const playerRemove = async(playerName: string)=>{
         <ButtonIcon icon="add" onPress={handlePlayerAdd} />
       </Form>
 
+    
       <HeaderList>
         <FlatList
           horizontal
@@ -170,7 +167,7 @@ const playerRemove = async(playerName: string)=>{
           )}
         />
 
-        <NumberOfPlayersPerTeam>{players?.length}</NumberOfPlayersPerTeam>
+        <NumberOfPlayersPerTeam>{players.length}</NumberOfPlayersPerTeam>
       </HeaderList>
 
       { 
@@ -195,7 +192,7 @@ const playerRemove = async(playerName: string)=>{
         )}
         contentContainerStyle={[
           { paddingBottom: 100 },
-          players?.length === 0 && { flex: 1 },
+          players.length === 0 && { flex: 1 },
         ]}
         showsVerticalScrollIndicator={false}
       />

@@ -8,7 +8,8 @@ export const playersGetByGroupAndTeam = async(group:string, team: string)=>{
     return players;
 
  }catch(error){
-    console.log(error)
+    console.log(error);
+    throw error;
  }
 
 }

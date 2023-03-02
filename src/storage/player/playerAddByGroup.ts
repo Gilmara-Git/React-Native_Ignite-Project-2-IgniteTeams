@@ -11,7 +11,7 @@ export const playerAddByGroup = async ( newPlayer: PlayerStorageDTO, group: stri
         const newPlayersExists = storedPlayers.filter(player => player.name === newPlayer.name)
         
         if(newPlayersExists.length > 0){
-            throw new AppError('This person already exists in one of the Teams!')
+            throw new AppError(`This ${newPlayer.name.toUpperCase()} already exists in one of the Teams!`)
         }
 
         const storage = JSON.stringify([...storedPlayers, newPlayer]);
