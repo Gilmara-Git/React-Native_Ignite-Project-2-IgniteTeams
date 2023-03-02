@@ -41,6 +41,7 @@ Figma Layout:
 - Expo Vector icons
 - Styled Components
 - AsyncStorage
+- png images(strategy of 3 different sizes)
 
 # App creation
 Project was created using **expo init appName --npm*** 
